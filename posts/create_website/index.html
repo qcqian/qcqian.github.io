@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.83.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>A guide to create my website&nbsp;&ndash;&nbsp;QcQBlog</title><link rel="stylesheet" href="/css/core.min.5352a03ec42c37240e16a2089bf4070526a598efd79b0dc6778df2d44c41179cec55bea11ed655252d613d24ba797ae2.css" integrity="sha384-U1KgPsQsNyQOFqIIm/QHBSalmO/Xmw3Gd43y1ExBF5zsVb6hHtZVJS1hPSS6eXri"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="A guide to create my website" /><body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">QcQBlog</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a></nav></div></span></div><div class="site slogan"><span class="title">Applied Machine Learning / Robotics / Internet-of-Things</span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">A guide to create my website</h1><p class="article date">Saturday, June 5, 2021</p></section><article class="article markdown-body"><h2 id="hugo-and-github-page">Hugo and Github Page</h2>
+<p><a href="https://gohugo.io/"target="_blank">Hugo</a> is an open source static site generator. You can find many cool themes inside. With help of Hugo and <a href="https://pages.github.com/"target="_blank">Github Pages</a>, it is easy to deploy a customized website. Let&rsquo;s see how it works.</p>
+<p>OS Version:</p>
+<ul>
+<li>Windows 10</li>
+<li>Hugo 0.83.1</li>
+<li>Theme: Notepadium 2.6.2</li>
+</ul>
+<h2 id="step-1-install-hugo">STEP 1. Install Hugo</h2>
+<p>A guide video can be seen <a href="https://www.youtube.com/watch?v=G7umPCU-8xc"target="_blank">here</a></p>
+<ol>
+<li>Create a directory at <code>C:/Hugo/bin</code></li>
+<li>Download <a href="https://github.com/gohugoio/hugo/releases"target="_blank">hugo release</a></li>
+<li>Extract all to path <code>C:/Hugo/bin</code></li>
+<li>Add <code>C:/Hugo/bin</code> to environmental path</li>
+<li>In your terminal, type <code>hugo version</code> to check if installed correctly</li>
+</ol>
+<h2 id="step-2-install-theme">STEP 2. Install theme</h2>
+<p>Find your favourite <a href="https://themes.gohugo.io/"target="_blank">theme</a>, and download it!</p>
+<p><img  src="/website_fig/notepadium.png"
+        alt="download notepadium"/></p>
+<h2 id="step-3-deploy-theme">STEP 3. Deploy theme</h2>
+<p>Open a new terminal:</p>
+<pre><code>cd C:/Hugo/
+hugo new site first_site
+cd first_site/themes
+git clone https://github.com/cntrump/hugo-notepadium.git
+</code></pre><p>Don&rsquo;t forget to rename your theme to <code>hugo-notepadium</code>.</p>
+<h2 id="step-4-edit-configtoml">STEP 4. Edit config.toml</h2>
+<p>Modify your <code>config.toml</code> <img  src="/website_fig/config.png"
+        alt="Modify config"/></p>
+<p>with your github <code>username</code> and website <code>title</code>.</p>
+<h2 id="step-5-create-the-first-blog-and-test-locally">STEP 5. Create the first blog and test locally</h2>
+<pre><code>cd first_site
+hugo new about.md
+hugo server
+</code></pre><p>we should be able to see the website at <a href="http://localhost:1313/"target="_blank">http://localhost:1313/</a> now:</p>
+<p><img  src="/website_fig/local_test.png"
+        alt="localhost"/></p>
+<h2 id="step-6-deploy-to-github-pages">STEP 6. Deploy to Github Pages</h2>
+<p>Open <strong>anoter</strong> terminal:</p>
+<pre><code>cd first_site
+hugo
+</code></pre><p>Then you&rsquo;ll see a <code>public</code> directory appears under <code>first_site</code> directory. Then we need to create the Github personal page:</p>
+<p><img  src="/website_fig/new_repo.png"
+        alt="new repository"/></p>
+<p>Don&rsquo;t include README file:</p>
+<p><img  src="/website_fig/githubio.png"
+        alt="new personal repository"/></p>
+<p>After that, go back to the terminal:</p>
+<pre><code>cd first_site/public
+git init
+git add .
+git remote add origin https://github.com/username/username.github.io.git
+git commit -m “first commit”
+git push origin master
+</code></pre><p>You can check your deployment by Github:</p>
+<p><img  src="/website_fig/view_deploy.png"
+        alt="view deployment"/></p>
+<p>Or directly search <code>https://username.github.io/</code> in your browser.</p>
+</article><section class="article labels"><a class="tag" href=/tags/website/>website</a></section><div class="article share addthis_inline_share_toolbox"></div><script defer src="/js/addthis_widget.min.99872df1091f055fca553e0b74b13c09bd383ef42b1c56a9edb651a91f122d56e7bc9a2fad73528246215b379b043226.js#pubid=ra-1234567890" integrity="sha384-mYct8QkfBV/KVT4LdLE8Cb04PvQrHFap7bZRqR8SLVbnvJovrXNSgkYhWzebBDIm"></script></div>
+<div class="article bottom"></div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">©2021 Qiuchen Qian&nbsp;- powered by <a href="https://github.com/cntrump/hugo-notepadium.git" target="_blank">Notepadium</a>
+    </p>
+    <p><a class="Github" href="https://github.com/qchqian" target="_blank">Github</a> 
+       <a class='stop'>&#183;</a>
+       <a class="ORCID" href="https://orcid.org/0000-0002-5888-246X" target="_blank">ORCID</a>
+       <a class='stop'>&#183;</a>
+       <a class="Email" href="mailto: qiuchen.qian19@imperial.ac.uk" target="_blank">Email</a>
+       <a class='stop'>&#183;</a>
+       <a class="Zhihu" href="https://www.zhihu.com/people/Quinn.Qian" target="_blank">Zhihu</a>
+       <a class='stop'>&#183;</a>
+       <a class="Linkedin" href="https://www.linkedin.com/in/qiuchen-qian" target="_blank">Linkedin</a>
+    </p></div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script><script src="/js/hljs.min.72e76ccf211868d08e31d7ca45c02501991bd760f28809c52045fa79fb7b7428664bb54ae875b46031ebc760c77b9562.js" integrity="sha384-cudszyEYaNCOMdfKRcAlAZkb12DyiAnFIEX6eft7dChmS7VK6HW0YDHrx2DHe5Vi"></script><script>hljs.initHighlightingOnLoad();</script></body>
+
+</html>
